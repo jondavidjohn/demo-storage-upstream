@@ -40,6 +40,6 @@ component "storage" {
 }
 
 output "bucket_id" {
-  value = component.storage.bucket.id
+  value = component.storage.bucket_id.id
   type = string
 }
