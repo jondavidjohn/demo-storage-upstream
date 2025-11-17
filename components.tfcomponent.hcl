@@ -12,7 +12,6 @@ variable "region" {
   type        = string
 }
 
-
 required_providers {
   random = {
     source  = "hashicorp/random"
@@ -27,9 +26,8 @@ required_providers {
 
 provider "random" "this" {}
 
-component "vpc" {
-
-  source = "./vpc"
+component "storage" {
+  source = "./storage"
 
   inputs = {
     account_id = var.account_id
@@ -41,17 +39,7 @@ component "vpc" {
   }
 }
 
-output "vpc_id" {
-  value = component.vpc.vpc_id.id
-  type = string
-}
-
-output "subnet_private_id" {
-  value = component.vpc.subnet_private_id.id
-  type = string
-}
-
-output "subnet_public_id" {
-  value = component.vpc.subnet_public_id.id
+output "bucket_id" {
+  value = component.storage.bucket.id
   type = string
 }
