@@ -27,11 +27,15 @@ required_providers {
 provider "random" "this" {}
 
 component "storage" {
-  source = "./storage"
+  source  = "joatmon08/hello/random"
+  version = "6.0.0"
 
   inputs = {
-    account_id = var.account_id
-    region = var.region
+    hellos = {
+      hello        = "bucket-${var.region}"
+      second_hello = "storage-${var.account_id}"
+    }
+    some_key = "storage-stack"
   }
 
   providers = {
@@ -40,6 +44,6 @@ component "storage" {
 }
 
 output "bucket_id" {
-  value = component.storage.bucket_id.id
+  value = component.storage.pet
   type = string
 }
