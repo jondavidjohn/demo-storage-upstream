@@ -1,13 +1,13 @@
 deployment "staging" {
   inputs = {
-    account_id = "89012"
+    account_id = "89011"
     region     = "us-west-1"
   }
 }
 
 deployment "prod" {
   inputs = {
-    account_id = "21098"
+    account_id = "21091"
     region     = "us-east-1"
   }
 }
