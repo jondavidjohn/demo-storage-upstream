@@ -6,6 +6,7 @@ deployment "staging" {
 }
 
 deployment "prod" {
+  destroy = true
   inputs = {
     account_id = "21091"
     region     = "us-west-1"
