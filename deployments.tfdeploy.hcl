@@ -9,7 +9,3 @@ deployment "staging" {
 publish_output "bucket_id_staging" {
   value = deployment.staging.bucket_id
 }
-
-publish_output "bucket_id_prod" {
-  value = deployment.prod.bucket_id
-}
